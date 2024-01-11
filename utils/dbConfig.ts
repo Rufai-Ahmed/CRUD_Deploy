@@ -1,7 +1,8 @@
+import { config } from "dotenv";
 import { connect } from "mongoose";
+config();
 
-const URL: string =
-  "mongodb+srv://abbeyrufai234:abbeyrufai234@cluster0.yokwex4.mongodb.net/testDB?retryWrites=true&w=majority";
+const URL: string = process.env.DATABASE_URL!;
 
 export const dbConfig = async () => {
   try {

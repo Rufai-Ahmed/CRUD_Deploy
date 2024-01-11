@@ -2,9 +2,11 @@ import express, { Application, json } from "express";
 import cors from "cors";
 import { mainApp } from "./mainApp";
 import { dbConfig } from "./utils/dbConfig";
+import { config } from "dotenv";
+config();
 
 const app: Application = express();
-const port: number = 4000;
+const port: number = parseInt(process.env.PORT!);
 
 app.use(cors());
 app.use(json());
